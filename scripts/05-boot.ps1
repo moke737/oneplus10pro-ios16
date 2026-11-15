@@ -23,7 +23,7 @@ $root = Split-Path -Parent $PSScriptRoot
 function Find-Tool([string]$Name) {
     $candidates = @()
     if ($env:ANDROID_TOOLS) { $candidates += (Join-Path $env:ANDROID_TOOLS $Name) }
-    $candidates += @((Join-Path $PSScriptRoot '..\platform-tools' $Name), (Join-Path 'C:\platform-tools' $Name))
+    $candidates += @((Join-Path (Join-Path $PSScriptRoot '..\platform-tools') $Name), (Join-Path 'C:\platform-tools' $Name))
     foreach ($c in $candidates) { if (Test-Path -LiteralPath $c) { return $c } }
     $cmd = Get-Command $Name -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }

@@ -25,7 +25,7 @@ $root = Split-Path -Parent $PSScriptRoot
 function Find-Tool([string]$Name) {
     $cands = @()
     if ($env:ANDROID_TOOLS) { $cands += (Join-Path $env:ANDROID_TOOLS $Name) }
-    $cands += @((Join-Path $PSScriptRoot '..\platform-tools' $Name), (Join-Path 'C:\platform-tools' $Name))
+    $cands += @((Join-Path (Join-Path $PSScriptRoot '..\platform-tools') $Name), (Join-Path 'C:\platform-tools' $Name))
     foreach ($c in $cands) { if (Test-Path -LiteralPath $c) { return $c } }
     $cmd = Get-Command $Name -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }
