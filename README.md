@@ -178,7 +178,6 @@ If these notes saved you an evening of debugging, the author's tip jar (赞赏�
 
 <img src="assets/tip-moke.png" width="260" alt="莫珂 的赞赏码">
 
-Scan with WeChat / Alipay.
 
 ## Legal
 
