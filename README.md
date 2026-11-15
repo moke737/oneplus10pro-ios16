@@ -167,7 +167,7 @@ Slot A 的引导链已被替换，`userdata` 也写成了 iOS 根。要回去必
 
 如果这些记录帮你省掉了一个晚上，可以扫这个码：
 
-<img src="assets/tip-moke.png" width="260" alt="莫珂 的赞赏码">
+<img src="assets/tip-moke.png" width="200" alt="莫珂 的赞赏码">
 
 微信 / 支付宝均可。
 

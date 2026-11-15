@@ -17,3 +17,6 @@ src/
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# local backup of the uncropped tip QR
+assets/tip-moke-orig.png
