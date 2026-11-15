@@ -1,0 +1,19 @@
+# --- build artifacts (never commit) -------------------------------------
+dist/
+apple/
+inputs/
+*.img
+*.simg
+*.macho
+*.adt
+*.esp
+
+# --- runtime state -------------------------------------------------------
+logs/
+state/
+src/
+
+# --- OS junk -------------------------------------------------------------
+Thumbs.db
+.DS_Store
+desktop.ini
