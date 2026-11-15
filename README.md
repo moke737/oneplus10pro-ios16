@@ -182,8 +182,6 @@ If these notes saved you an evening of debugging, you can scan this code:
 
 <img src="assets/tip-moke.png" width="200" alt="莫珂 的赞赏码">
 
-WeChat / Alipay.
-
 ## Legal
 
 For research and interoperability. No Apple code or binaries are distributed here; iOS itself is
