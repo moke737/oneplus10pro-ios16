@@ -11,6 +11,10 @@ ABL → BootShim（ios-sweet）→ Mu-Silicium UEFI → UniXNU 菜单 → Darwin
 
 **当前状态：能进 iOS 桌面。** 显示、触控、硬件键可用；GPU 驱动已开（`negroniadreno=22`），
 但还需要 Metal→Vulkan 用户态库才有意义。Wi-Fi、蓝牙、音频、相机、蜂窝基带均未打通。
+
+GPU 和 Wi-Fi 卡在同一类墙上——需要改内核，不是改 boot-arg：Adreno 驱动停在 ZAP 签名调用
+（`PAS supported: gpu 0`），QCA6490 停在 BHI 下载之后（`MHISTATUS` 始终不为 READY）。
+细节见下面两份进展记录。
 这是研究玩具，不是日用机。
 
 > 手机会把自己伪装成 **iPhone X（`iPhone10,3` / D22AP）**。别在上面登真实 Apple ID。
@@ -28,6 +32,10 @@ ABL → BootShim（ios-sweet）→ Mu-Silicium UEFI → UniXNU 菜单 → Darwin
 | `README.zh-CN.md` | 本文件（中文版） |
 | `README.md` | English version |
 | `成功记录-iOS16桌面.md` | **可用配方** + 12 个坑的完整解法（推荐先看这个） |
+| `WiFi进展-2026-11-16.md` | WLAN 真机实验：固件区、SMMU stage-1、芯片启动卡在哪 |
+| `GPU进展-2026-11-16.md` | Adreno 真机实验：卡在 ZAP/PAS 那道墙；固件区怎么建、怎么清 |
+| `WiFi进展-2026-11-16.md` | WLAN 真机实验：固件区、SMMU stage-1、芯片启动卡在哪 |
+| `GPU进展-2026-11-16.md` | Adreno 真机实验：卡在 ZAP/PAS 那道墙；固件区怎么建、怎么清 |
 | `事故记录-引导循环与恢复.md` | 无限重启的事后分析：slot 怎么被标 unbootable、怎么救 |
 | `UniXNU-一加10Pro-可行性评估.md` | 可行性、架构、成本与风险评估 |
 | `README-操作顺序.md` | 分阶段操作手册 |

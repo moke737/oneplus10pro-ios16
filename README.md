@@ -14,6 +14,16 @@ ABL → BootShim (ios-sweet) → Mu-Silicium UEFI → UniXNU menu → DarwinBoot
 enabled (`negroniadreno=22`) but needs a Metal→Vulkan userland to be useful. Wi-Fi, Bluetooth,
 audio, camera and cellular are not up. This is a research toy, not a daily driver.
 
+GPU and Wi-Fi are both blocked on the same kind of wall - a kernel change is needed, not a
+boot-arg: the Adreno driver stops at the ZAP signature call (`PAS supported: gpu 0`), and the
+QCA6490 stops after the BHI download (`MHISTATUS` never becomes READY). Details in the two
+progress notes listed below.
+
+GPU and Wi-Fi are both blocked on the same wall — a kernel change is needed, not a boot-arg:
+the Adreno driver stops at the ZAP signature call (`PAS supported: gpu 0`), and the QCA6490
+stops after the BHI download (`MHISTATUS` never becomes READY). Details in the two progress
+notes below.
+
 > The phone presents itself as an **iPhone X (`iPhone10,3` / D22AP)**. Do not sign in with a real
 > Apple ID on it.
 
@@ -31,6 +41,10 @@ records what actually does.
 | `README.md` | this file |
 | `README.zh-CN.md` | 中文版（Chinese version） |
 | `成功记录-iOS16桌面.md` | **the working recipe** + 12 pitfalls with fixes (Chinese) |
+| `WiFi进展-2026-11-16.md` | WLAN bring-up log: firmware area, SMMU stage-1, where the chip boot stops (Chinese) |
+| `GPU进展-2026-11-16.md` | Adreno bring-up log: the driver stops at the ZAP/PAS wall; how the area is built and erased (Chinese) |
+| `WiFi进展-2026-11-16.md` | WLAN bring-up log: firmware area, SMMU stage-1, where the chip boot stops (Chinese) |
+| `GPU进展-2026-11-16.md` | Adreno bring-up log: driver stops at the ZAP/PAS wall; how the area is built and erased (Chinese) |
 | `事故记录-引导循环与恢复.md` | bootloop post-mortem: how slot A gets marked unbootable, and how to recover (Chinese) |
 | `UniXNU-一加10Pro-可行性评估.md` | feasibility, architecture, cost and risk analysis (Chinese) |
 | `README-操作顺序.md` | step-by-step runbook (Chinese) |

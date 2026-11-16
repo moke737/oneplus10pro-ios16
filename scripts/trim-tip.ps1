@@ -2,8 +2,8 @@
 # Crop the tip QR to the QR + caption area (drops the white margins and the
 # full-width gold banner). ASCII only.
 param(
-    [string]$Source = 'E:\1+10pro\1+10pro[ios]\assets\tip-moke-orig.png',
-    [string]$Dest   = 'E:\1+10pro\1+10pro[ios]\assets\tip-moke.png',
+    [string]$Source = (Join-Path (Split-Path -Parent $PSScriptRoot) 'assets\tip-moke-orig.png'),
+    [string]$Dest   = (Join-Path (Split-Path -Parent $PSScriptRoot) 'assets\tip-moke.png'),
     [int]$X = 120,
     [int]$Y = 120,
     [int]$W = 830,
